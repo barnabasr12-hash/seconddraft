@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#18392c" />
+  <meta name="description" content="CSI Shanthi Church, Wilson Garden, Bengaluru — worship, fellowship, Sunday School, Bible study and a legacy of faith since 1959." />
+  <title>CSI Shanthi Church | Wilson Garden, Bengaluru</title>
+  <style>
+    :root{
+      --ink:#17231d;
+      --muted:#637068;
+      --cream:#f7f4ec;
+      --paper:#fffdf8;
+      --green:#18392c;
+      --green-2:#295b46;
+      --gold:#c89a48;
+      --gold-soft:#ead8b4;
+      --line:#e6e1d7;
+      --white:#fff;
+      --shadow:0 18px 50px rgba(18,42,32,.10);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:var(--cream);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    button{font:inherit}
+    .container{width:min(1180px, calc(100% - 40px));margin:auto}
+    .eyebrow{
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:.74rem;
+      font-weight:800;
+      color:var(--gold);
+    }
+    .section-title{
+      margin:.45rem 0 1rem;
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:clamp(2rem,4.7vw,4rem);
+      line-height:1.04;
+      letter-spacing:-.03em;
+    }
+    .lead{font-size:1.08rem;color:var(--muted);max-width:760px}
+    .nav-wrap{
+      position:fixed;top:0;left:0;right:0;z-index:50;
+      background:rgba(247,244,236,.88);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(24,57,44,.08);
+    }
+    nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .brand-mark{
+      width:42px;height:42px;border-radius:50%;
+      background:var(--green);color:white;display:grid;place-items:center;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.15);
+      font-family:Georgia,serif;font-size:1.35rem;
+    }
+    .brand small{display:block;font-weight:600;color:var(--muted);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+    .nav-links{display:flex;align-items:center;gap:26px;font-size:.92rem;font-weight:650}
+    .nav-links a{opacity:.82}
+    .nav-links a:hover{opacity:1;color:var(--green)}
+    .nav-cta{padding:10px 16px;border-radius:999px;background:var(--green);color:#fff!important}
+    .menu-btn{display:none;border:0;background:none;font-size:1.5rem;color:var(--green)}
+
+    .hero{
+      min-height:100vh;
+      position:relative;
+      display:grid;align-items:end;
+      overflow:hidden;
+      background:#203a2f;
+    }
+    .hero-bg{position:absolute;inset:0}
+    .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 42%;filter:saturate(.88) contrast(1.02)}
+    .hero-bg:after{
+      content:"";position:absolute;inset:0;
+      background:
+        linear-gradient(90deg, rgba(10,29,21,.89) 0%, rgba(10,29,21,.62) 44%, rgba(10,29,21,.12) 78%),
+        linear-gradient(0deg, rgba(10,29,21,.75) 0%, transparent 42%);
+    }
+    .hero-content{
+      position:relative;z-index:2;color:white;padding:150px 0 74px;
+      max-width:820px;
+    }
+    .hero-kicker{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:8px 12px;border:1px solid rgba(255,255,255,.22);
+      background:rgba(255,255,255,.08);
+      border-radius:999px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;
+    }
+    .hero h1{
+      margin:22px 0 18px;
+      font-family:Georgia, "Times New Roman", serif;
+      font-weight:500;
+      font-size:clamp(3.3rem,8vw,7.4rem);
+      line-height:.9;letter-spacing:-.05em;
+    }
+    .hero h1 span{color:#f2d69d}
+    .hero p{max-width:700px;font-size:1.12rem;color:rgba(255,255,255,.86)}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:50px;padding:0 20px;border-radius:999px;font-weight:750;
+      transition:.2s ease;border:1px solid transparent;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:#f3d8a2;color:#18392c}
+    .btn-ghost{border-color:rgba(255,255,255,.33);background:rgba(255,255,255,.08);color:white}
+    .hero-meta{
+      display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:1px;margin-top:56px;border:1px solid rgba(255,255,255,.18);border-radius:18px;overflow:hidden;
+      background:rgba(255,255,255,.12);
+    }
+    .hero-meta > div{padding:18px;background:rgba(10,29,21,.38);backdrop-filter:blur(8px)}
+    .hero-meta strong{display:block;color:#f5dba7;font-family:Georgia,serif;font-size:1.25rem}
+    .hero-meta span{font-size:.82rem;color:rgba(255,255,255,.72)}
+
+    section{padding:100px 0}
+    .intro-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+    .photo-card{
+      position:relative;border-radius:28px;overflow:hidden;box-shadow:var(--shadow);min-height:560px;background:#ddd;
+    }
+    .photo-card img{width:100%;height:100%;position:absolute;object-fit:cover;object-position:center center}
+    .verse-card{
+      position:absolute;left:28px;right:28px;bottom:28px;
+      background:rgba(255,253,248,.93);backdrop-filter:blur(12px);
+      border-radius:20px;padding:22px 24px;border:1px solid rgba(255,255,255,.55)
+    }
+    .verse-card p{font-family:Georgia,serif;font-size:1.15rem;line-height:1.5;margin:0 0 8px}
+    .verse-card small{color:var(--green);font-weight:800}
+    .story-points{display:grid;gap:18px;margin-top:30px}
+    .story-point{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+    .story-point .num{width:44px;height:44px;border-radius:14px;background:#efe8d8;color:var(--green);display:grid;place-items:center;font-weight:900}
+    .story-point h3{margin:0 0 4px;font-size:1rem}
+    .story-point p{margin:0;color:var(--muted);font-size:.94rem}
+
+    .schedule{background:var(--green);color:white;position:relative;overflow:hidden}
+    .schedule:before{
+      content:"";position:absolute;width:460px;height:460px;border:1px solid rgba(255,255,255,.08);
+      border-radius:50%;right:-120px;top:-160px;box-shadow:0 0 0 70px rgba(255,255,255,.025),0 0 0 140px rgba(255,255,255,.018);
+    }
+    .schedule .lead{color:rgba(255,255,255,.72)}
+    .schedule-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:38px;position:relative}
+    .service-card{
+      min-height:210px;padding:24px;border-radius:20px;
+      border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.055);
+      display:flex;flex-direction:column;justify-content:space-between;
+    }
+    .service-card .day{font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:#e7c98e;font-weight:850}
+    .service-card h3{font-family:Georgia,serif;font-size:1.55rem;line-height:1.15;margin:16px 0}
+    .service-card p{margin:0;color:rgba(255,255,255,.72);font-size:.92rem}
+
+    .ministries-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+    .ministry{
+      padding:28px;border-radius:22px;background:var(--paper);border:1px solid var(--line);
+      transition:.25s ease;
+    }
+    .ministry:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .icon{
+      width:48px;height:48px;border-radius:15px;background:#eee7d8;
+      display:grid;place-items:center;font-size:1.3rem;margin-bottom:22px;
+    }
+    .ministry h3{margin:0 0 8px;font-family:Georgia,serif;font-size:1.35rem}
+    .ministry p{margin:0;color:var(--muted);font-size:.94rem}
+
+    .history{background:#eee8dc}
+    .timeline{margin-top:44px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid #cabfa9}
+    .era{padding:28px 24px 0 0;position:relative}
+    .era:before{content:"";position:absolute;top:-7px;left:0;width:13px;height:13px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px #eee8dc}
+    .era .year{font-weight:900;color:var(--green);font-size:.86rem;letter-spacing:.08em}
+    .era h3{font-family:Georgia,serif;margin:8px 0;font-size:1.28rem}
+    .era p{color:var(--muted);font-size:.91rem;margin:0}
+
+    .media-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:22px;margin-top:34px}
+    .media-feature{
+      min-height:430px;border-radius:26px;overflow:hidden;position:relative;background:#111;
+    }
+    .media-feature img{width:100%;height:100%;object-fit:cover;position:absolute;opacity:.72}
+    .media-feature:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.82),transparent 68%)}
+    .media-copy{position:absolute;z-index:2;left:30px;right:30px;bottom:28px;color:white}
+    .media-copy h3{font-family:Georgia,serif;font-size:2rem;margin:6px 0}
+
+    .youtube-feature .play-badge{
+      position:absolute;z-index:3;left:50%;top:48%;transform:translate(-50%,-50%);
+      width:76px;height:76px;border-radius:50%;display:grid;place-items:center;
+      background:rgba(255,255,255,.94);color:#18392c;font-size:1.7rem;
+      box-shadow:0 12px 34px rgba(0,0,0,.25);padding-left:5px;
+      transition:.2s ease;
+    }
+    .youtube-feature:hover .play-badge{transform:translate(-50%,-50%) scale(1.06)}
+
+    .side-note{border-radius:26px;padding:32px;background:var(--green);color:white;display:flex;flex-direction:column;justify-content:space-between}
+    .side-note h3{font-family:Georgia,serif;font-size:2rem;line-height:1.1;margin:14px 0}
+    .side-note p{color:rgba(255,255,255,.72)}
+
+    .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+    .contact-card{padding:30px;background:var(--paper);border:1px solid var(--line);border-radius:24px}
+    .contact-row{padding:17px 0;border-bottom:1px solid var(--line)}
+    .contact-row:last-child{border-bottom:0}
+    .contact-row small{display:block;color:var(--muted);margin-bottom:4px}
+    .contact-row strong{font-size:1.02rem}
+    .map-box{
+      min-height:430px;border-radius:26px;overflow:hidden;position:relative;
+      background:
+        linear-gradient(rgba(24,57,44,.06),rgba(24,57,44,.06)),
+        url('assets/church-exterior.png') center/cover;
+      box-shadow:var(--shadow);
+    }
+    .map-overlay{
+      position:absolute;inset:auto 22px 22px 22px;background:rgba(255,253,248,.95);
+      border-radius:18px;padding:22px;
+    }
+    footer{background:#10281f;color:white;padding:50px 0 28px}
+    .footer-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:40px}
+    footer p,footer a{color:rgba(255,255,255,.7)}
+    footer h4{margin-top:0;color:#f2d69d}
+    .copyright{border-top:1px solid rgba(255,255,255,.1);margin-top:34px;padding-top:22px;color:rgba(255,255,255,.5);font-size:.82rem}
+
+
+    .offerings{
+      background:
+        radial-gradient(circle at 12% 20%, rgba(200,154,72,.13), transparent 28%),
+        linear-gradient(180deg,#fffdf8 0%,#f3eee3 100%);
+    }
+    .offerings-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:64px;
+      align-items:center;
+    }
+    .offering-note{
+      display:grid;
+      grid-template-columns:52px 1fr;
+      gap:16px;
+      margin:28px 0;
+      padding:20px;
+      border-radius:20px;
+      background:rgba(24,57,44,.06);
+      border:1px solid rgba(24,57,44,.10);
+    }
+    .offering-note-icon{
+      width:52px;height:52px;border-radius:16px;
+      display:grid;place-items:center;
+      background:var(--green);color:#f2d69d;
+      font-size:1.25rem;
+    }
+    .offering-note p{margin:5px 0 0;color:var(--muted);font-size:.94rem}
+    .offering-id{
+      padding:16px 18px;
+      border-left:3px solid var(--gold);
+      background:rgba(255,255,255,.58);
+      border-radius:0 14px 14px 0;
+      width:max-content;max-width:100%;
+    }
+    .offering-id span{font-size:.8rem;color:var(--muted)}
+    .offering-id strong{font-size:1.02rem;word-break:break-word}
+    .offering-card{
+      width:min(100%,470px);
+      margin-left:auto;
+      padding:22px;
+      background:rgba(255,255,255,.82);
+      border:1px solid rgba(24,57,44,.10);
+      box-shadow:var(--shadow);
+      border-radius:28px;
+      backdrop-filter:blur(10px);
+    }
+    .offering-card-top{
+      display:flex;align-items:center;gap:12px;
+      padding:2px 2px 18px;
+    }
+    .offering-card-top .cross-mini{
+      width:44px;height:44px;border-radius:50%;
+      display:grid;place-items:center;
+      background:var(--green);color:#f2d69d;
+      font-family:Georgia,serif;font-size:1.2rem;
+    }
+    .offering-card-top strong{display:block}
+    .offering-card-top small{display:block;color:var(--muted)}
+    .qr-frame{
+      background:white;
+      border-radius:20px;
+      padding:14px;
+      border:1px solid var(--line);
+      overflow:hidden;
+    }
+    .qr-frame img{
+      width:100%;
+      aspect-ratio:4/5;
+      object-fit:cover;
+      object-position:center 25%;
+      border-radius:14px;
+    }
+    .offering-card-bottom{padding:18px 4px 4px;text-align:center}
+    .offering-card-bottom strong{display:block;font-family:Georgia,serif;font-size:1.25rem}
+    .offering-card-bottom span{display:block;color:var(--muted);font-size:.86rem;margin-top:4px}
+
+
+    .refined-offering-card{
+      position:relative;
+      overflow:hidden;
+      background:
+        linear-gradient(180deg,rgba(255,255,255,.96),rgba(250,247,239,.96));
+    }
+    .refined-offering-card:before{
+      content:"";
+      position:absolute;
+      inset:-120px auto auto -120px;
+      width:260px;height:260px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(200,154,72,.16),transparent 66%);
+      pointer-events:none;
+    }
+    .qr-display-wrap{
+      position:relative;
+      display:grid;
+      place-items:center;
+      padding:12px 4px 8px;
+    }
+    .qr-halo{
+      position:absolute;
+      width:82%;
+      aspect-ratio:1;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(200,154,72,.18),rgba(24,57,44,.05) 48%,transparent 70%);
+      filter:blur(10px);
+    }
+    .elegant-qr-frame{
+      position:relative;
+      z-index:1;
+      width:min(100%,360px);
+      aspect-ratio:1;
+      padding:18px;
+      background:white;
+      border:1px solid rgba(24,57,44,.12);
+      border-radius:28px;
+      box-shadow:
+        0 20px 50px rgba(18,42,32,.12),
+        inset 0 0 0 6px rgba(247,244,236,.8);
+    }
+    .elegant-qr-frame img{
+      width:100%;
+      height:100%;
+      aspect-ratio:1;
+      object-fit:contain;
+      object-position:center;
+      border-radius:16px;
+      background:#fff;
+    }
+    .refined-offering-copy{
+      text-align:center;
+      padding-top:18px;
+    }
+    .refined-offering-copy span{
+      display:block;
+      margin-top:5px;
+      color:var(--muted);
+      font-size:.9rem;
+    }
+    .refined-offering-copy small{
+      display:block;
+      color:var(--muted);
+      font-size:.76rem;
+      line-height:1.5;
+      max-width:330px;
+      margin:10px auto 0;
+    }
+    .upi-pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      margin-top:14px;
+      padding:9px 14px;
+      border-radius:999px;
+      background:rgba(24,57,44,.07);
+      border:1px solid rgba(24,57,44,.10);
+      color:var(--green);
+      font-weight:800;
+      font-size:.88rem;
+      letter-spacing:.02em;
+      word-break:break-all;
+    }
+
+
+    .premium-offering-card{
+      position:relative;
+      width:min(100%, 520px);
+      margin-left:auto;
+      padding:0;
+      overflow:hidden;
+      border-radius:30px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.98) 0%, rgba(248,245,238,.98) 100%);
+      border:1px solid rgba(24,57,44,.10);
+      box-shadow:
+        0 24px 60px rgba(18,42,32,.12),
+        0 8px 18px rgba(18,42,32,.06);
+    }
+    .premium-offering-band{
+      height:8px;
+      background:linear-gradient(90deg, #18392c 0%, #c89a48 48%, #18392c 100%);
+    }
+    .premium-offering-head{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      padding:24px 24px 12px;
+    }
+    .premium-cross{
+      width:54px;
+      height:54px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(180deg, #204434 0%, #18392c 100%);
+      color:#f3d8a2;
+      font-size:1.35rem;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);
+    }
+    .premium-mini{
+      margin:0 0 3px;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-size:.72rem;
+      font-weight:800;
+      color:#c89a48;
+    }
+    .premium-offering-head h3{
+      margin:0;
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:1.7rem;
+      line-height:1.12;
+      color:var(--ink);
+    }
+    .premium-offering-body{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:18px;
+      padding:10px 24px 8px;
+    }
+    .premium-qr-column{
+      display:grid;
+      place-items:center;
+      text-align:center;
+    }
+    .premium-qr-shell{
+      width:min(100%, 330px);
+      background:
+        linear-gradient(180deg, #ffffff 0%, #fbfaf7 100%);
+      padding:16px;
+      border-radius:28px;
+      border:1px solid rgba(24,57,44,.10);
+      box-shadow:
+        inset 0 0 0 6px rgba(247,244,236,.9),
+        0 18px 40px rgba(18,42,32,.08);
+    }
+    .premium-qr-shell img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:16px;
+      background:white;
+    }
+    .premium-scan-note{
+      margin:12px 0 0;
+      color:var(--muted);
+      font-size:.86rem;
+    }
+    .premium-details-column{
+      display:grid;
+      gap:16px;
+    }
+    .premium-scripture{
+      padding:16px 18px;
+      border-radius:18px;
+      background:rgba(200,154,72,.08);
+      border:1px solid rgba(200,154,72,.16);
+      color:#5b4a2c;
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:1rem;
+      line-height:1.55;
+    }
+    .premium-scripture span{
+      display:block;
+      margin-top:8px;
+      font-size:.82rem;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      color:#8b7040;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight:800;
+    }
+    .premium-upi-box{
+      padding:15px 16px;
+      border-radius:18px;
+      background:rgba(24,57,44,.05);
+      border:1px solid rgba(24,57,44,.10);
+    }
+    .premium-upi-box small{
+      display:block;
+      color:var(--muted);
+      margin-bottom:4px;
+      font-size:.76rem;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-weight:800;
+    }
+    .premium-upi-box strong{
+      display:block;
+      color:var(--green);
+      font-size:1rem;
+      font-weight:900;
+      word-break:break-all;
+    }
+    .premium-offering-points{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:grid;
+      gap:10px;
+    }
+    .premium-offering-points li{
+      position:relative;
+      padding-left:22px;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+    .premium-offering-points li:before{
+      content:"✦";
+      position:absolute;
+      left:0;
+      top:0;
+      color:var(--gold);
+      font-size:.85rem;
+      line-height:1.4;
+    }
+    .premium-offering-foot{
+      margin:10px 24px 24px;
+      padding:16px 18px;
+      border-radius:18px;
+      background:#18392c;
+      color:white;
+    }
+    .premium-offering-foot strong{
+      display:block;
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:1.1rem;
+      color:#f2d69d;
+      margin-bottom:4px;
+    }
+    .premium-offering-foot span{
+      display:block;
+      color:rgba(255,255,255,.76);
+      font-size:.84rem;
+      line-height:1.55;
+    }
+
+    .back-to-top{
+      position:fixed;
+      right:22px;
+      bottom:22px;
+      z-index:60;
+      width:50px;height:50px;
+      border:0;border-radius:50%;
+      display:grid;place-items:center;
+      background:var(--green);
+      color:white;
+      font-size:1.4rem;
+      box-shadow:0 12px 30px rgba(16,40,31,.25);
+      cursor:pointer;
+      opacity:0;
+      visibility:hidden;
+      transform:translateY(10px);
+      transition:.22s ease;
+    }
+    .back-to-top.show{
+      opacity:1;
+      visibility:visible;
+      transform:translateY(0);
+    }
+    .back-to-top:hover{transform:translateY(-2px)}
+
+    @media(max-width:980px){
+      .nav-links{display:none;position:absolute;top:74px;left:20px;right:20px;flex-direction:column;align-items:stretch;background:var(--paper);padding:22px;border-radius:18px;box-shadow:var(--shadow)}
+      .nav-links.open{display:flex}
+      .menu-btn{display:block}
+      .intro-grid,.visit-grid,.media-grid{grid-template-columns:1fr}
+
+      .offerings-grid{grid-template-columns:1fr;gap:34px}
+      .offering-card{margin:0 auto;width:min(100%,520px)}
+
+      .schedule-grid{grid-template-columns:repeat(2,1fr)}
+      .ministries-grid{grid-template-columns:repeat(2,1fr)}
+      .timeline{grid-template-columns:repeat(2,1fr);gap:26px;border-top:0}
+      .era{border-top:1px solid #cabfa9}
+      .hero-meta{grid-template-columns:1fr}
+    }
+    @media(max-width:640px){
+      .container{width:min(100% - 28px,1180px)}
+      section{padding:72px 0}
+      .hero-content{padding:125px 0 45px}
+      .hero h1{font-size:clamp(3.2rem,16vw,5.1rem)}
+      .schedule-grid,.ministries-grid,.timeline,.footer-grid{grid-template-columns:1fr}
+      .photo-card{min-height:440px}
+      .verse-card{left:16px;right:16px;bottom:16px}
+      .service-card{min-height:170px}
+
+      .nav-wrap nav{height:68px}
+      .brand{font-size:.94rem}
+      .brand small{font-size:.65rem}
+      .brand-mark{width:38px;height:38px}
+      .nav-links{top:68px;left:14px;right:14px;gap:8px}
+      .nav-links a{padding:10px 8px}
+      .nav-cta{text-align:center}
+      .hero{min-height:92svh}
+      .hero-content{padding-top:110px}
+      .hero-actions{display:grid;grid-template-columns:1fr}
+      .btn{width:100%}
+      .hero-meta > div{padding:15px}
+      .hero-meta span{line-height:1.45;display:block}
+      .offerings-copy .section-title{font-size:clamp(2.2rem,12vw,3.5rem)}
+      .offering-note{grid-template-columns:44px 1fr;padding:16px}
+      .offering-note-icon{width:44px;height:44px}
+      .offering-card{padding:16px;border-radius:22px}
+      .premium-offering-card{width:100%;border-radius:24px}
+      .premium-offering-head{padding:20px 18px 10px;gap:12px}
+      .premium-cross{width:48px;height:48px;border-radius:16px}
+      .premium-offering-head h3{font-size:1.45rem}
+      .premium-offering-body{padding:8px 18px 8px;gap:14px}
+      .premium-qr-shell{width:min(100%,290px);padding:12px;border-radius:22px}
+      .premium-scripture,.premium-upi-box,.premium-offering-foot{border-radius:16px}
+      .premium-offering-foot{margin:10px 18px 18px}
+      .qr-frame{padding:10px;border-radius:16px}
+      .qr-frame img{border-radius:10px}
+      .back-to-top{right:14px;bottom:14px;width:46px;height:46px}
+
+    }
+  </style>
+</head>
+<body>
+  <header class="nav-wrap">
+    <div class="container">
+      <nav>
+        <a class="brand" href="#home" aria-label="CSI Shanthi Church home">
+          <span class="brand-mark">✝</span>
+          <span>CSI Shanthi Church<small>Wilson Garden · Bengaluru</small></span>
+        </a>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+        <div class="nav-links" id="navLinks">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#ministries">Ministries</a>
+          <a href="#history">Our Story</a>
+          <a href="#watch">Watch</a>
+          <a href="#offerings">Offerings</a>
+          <a class="nav-cta" href="#visit">Plan a Visit</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-bg"><img src="assets/church-exterior.png" alt="CSI Shanthi Church exterior"></div>
+      <div class="container hero-content">
+        <div class="hero-kicker">A worshipping community since 1959</div>
+        <h1>A place of <span>peace.</span><br>A family of faith.</h1>
+        <p>Welcome to CSI Shanthi Church in Wilson Garden, Bengaluru — a congregation rooted in worship, Scripture, fellowship and generations of faithful service.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#services">Sunday at Shanthi →</a>
+          <a class="btn btn-ghost" href="https://www.youtube.com/@csishanthichurch586" target="_blank" rel="noopener">Watch on YouTube</a>
+        </div>
+        <div class="hero-meta">
+          <div><strong>8:30 AM</strong><span>Sunday Divine Service</span></div>
+          <div><strong>Daily</strong><span>Church Open for Prayer · 6:30–7:30 AM · 6:30–7:30 PM</span></div>
+          <div><strong>Wilson Garden</strong><span>#1, 12th Cross, Bengaluru 560027</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container intro-grid">
+        <div>
+          <div class="eyebrow">Welcome home</div>
+          <h2 class="section-title">Faith passed on.<br>Peace lived out.</h2>
+          <p class="lead">Shanthi Church grew from a small Sunday School and a rented car shed into a vibrant church family. Its story is one of ordinary people giving their time, prayers, skills and resources to build a lasting place of worship.</p>
+          <div class="story-points">
+            <div class="story-point"><div class="num">01</div><div><h3>Rooted in Scripture</h3><p>Worship, Bible study and Christian formation remain at the heart of church life.</p></div></div>
+            <div class="story-point"><div class="num">02</div><div><h3>Built by generations</h3><p>Members across decades shaped the church through service, generosity and shared responsibility.</p></div></div>
+            <div class="story-point"><div class="num">03</div><div><h3>Open through the week</h3><p>The church remains open for morning and evening prayer, with regular Bible study and fellowship gatherings.</p></div></div>
+          </div>
+        </div>
+        <div class="photo-card">
+          <img src="assets/altar-enhanced.png" alt="Altar and cross inside CSI Shanthi Church">
+          <div class="verse-card">
+            <p>“From whom the whole body, joined and held together by every joint… builds itself up in love.”</p>
+            <small>Ephesians 4:16</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="schedule" id="services">
+      <div class="container">
+        <div class="eyebrow">Gather with us</div>
+        <h2 class="section-title">Worship & weekly rhythm</h2>
+        <p class="lead">Whether you are visiting for the first time or have worshipped here for years, you are welcome to join the life of the church.</p>
+        <div class="schedule-grid">
+          <article class="service-card"><div><span class="day">Every Sunday</span><h3>Divine Service</h3></div><p>Morning · 8:30 AM</p></article>
+          <article class="service-card"><div><span class="day">Every Sunday</span><h3>Sunday School</h3></div><p>9:00 AM</p></article>
+          <article class="service-card"><div><span class="day">Every Wednesday</span><h3>Bible Study</h3></div><p>6:30 PM</p></article>
+          <article class="service-card"><div><span class="day">Daily</span><h3>Church Open for Prayer</h3></div><p>6:30–7:30 AM · 6:30–7:30 PM</p></article>
+          <article class="service-card"><div><span class="day">Holy Communion</span><h3>Monthly Communion</h3></div><p>1st day · 6:30 AM<br>1st Sunday · 8:30 AM & 6:30 PM</p></article>
+          <article class="service-card"><div><span class="day">2nd Sunday</span><h3>Youth Fellowship</h3></div><p>Every month</p></article>
+          <article class="service-card"><div><span class="day">3rd Sunday</span><h3>Women’s Fellowship</h3></div><p>11:00 AM</p></article>
+          <article class="service-card"><div><span class="day">Quarterly</span><h3>Senior Citizens Fellowship</h3></div><p>2nd Sunday · Mar / Jun / Sep / Dec</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="ministries">
+      <div class="container">
+        <div class="eyebrow">Life together</div>
+        <h2 class="section-title">There is a place for every generation.</h2>
+        <p class="lead">Church is more than a Sunday service. Our ministries create spaces to learn, serve, pray, belong and grow together.</p>
+        <div class="ministries-grid">
+          <article class="ministry"><div class="icon">☀</div><h3>Sunday School</h3><p>Helping children grow in faith through Bible learning, worship, activities and community.</p></article>
+          <article class="ministry"><div class="icon">✦</div><h3>Youth Fellowship</h3><p>A space for young people to connect, discover purpose and take an active part in church life.</p></article>
+          <article class="ministry"><div class="icon">♡</div><h3>Women’s Fellowship</h3><p>Fellowship, prayer and service carried forward by generations of women in the congregation.</p></article>
+          <article class="ministry"><div class="icon">⌁</div><h3>Senior Citizens Fellowship</h3><p>Seasonal gatherings that honour fellowship, encouragement and spiritual companionship.</p></article>
+          <article class="ministry"><div class="icon">▦</div><h3>Bible Study</h3><p>A weekly midweek gathering to engage Scripture more deeply and grow together in faith.</p></article>
+          <article class="ministry"><div class="icon">↗</div><h3>Mission & Outreach</h3><p>The church’s history includes missionary support and initiatives to share the Gospel beyond the local congregation.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="history" id="history">
+      <div class="container">
+        <div class="eyebrow">Our story</div>
+        <h2 class="section-title">From a car shed to a church home.</h2>
+        <p class="lead">The congregation at Wilson Garden developed from a Sunday School and took shape over decades through the faith and labour of many pioneers, pastors and families.</p>
+        <div class="timeline">
+          <article class="era"><div class="year">1959–1975</div><h3>The Beginning</h3><p>The congregation began with a small group of families, meeting first in homes and a rented car shed. A site was acquired and the early prayer hall took shape.</p></article>
+          <article class="era"><div class="year">1976</div><h3>A Church Building</h3><p>After years of fundraising and shared sacrifice, the church building was completed and dedicated, marking a defining chapter in Shanthi Church’s growth.</p></article>
+          <article class="era"><div class="year">2007</div><h3>Renewal & Expansion</h3><p>The church was reconstructed and expanded, including a parish hall and a larger worship space designed to accommodate around 500 people.</p></article>
+          <article class="era"><div class="year">Today</div><h3>An inheritance to retain</h3><p>The legacy continues through worship, fellowship, service, Christian education and the stewardship of each new generation.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="watch">
+      <div class="container">
+        <div class="eyebrow">Church online</div>
+        <h2 class="section-title">Worship beyond the walls.</h2>
+        <p class="lead">Follow services and church content through the official CSI Shanthi Church YouTube channel.</p>
+        <div class="media-grid">
+          <a class="media-feature youtube-feature" href="https://www.youtube.com/@csishanthichurch586" target="_blank" rel="noopener">
+            <img src="https://i.ytimg.com/vi/jQaesjMThlE/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/jQaesjMThlE/hqdefault.jpg';" alt="Latest CSI Shanthi Church Sunday service thumbnail">
+            <div class="play-badge" aria-hidden="true">▶</div>
+            <div class="media-copy"><div class="eyebrow">Latest Live / Service</div><h3>30-08-2026 Sunday Service · Identity in Christ</h3><span>Visit the YouTube channel →</span></div>
+          </a>
+          <div class="side-note">
+            <div>
+              <div class="eyebrow">Stay connected</div>
+              <h3>Come as you are. Join the family.</h3>
+              <p>New to Shanthi Church? Start with a Sunday Divine Service, meet the congregation and discover the fellowships that fit your season of life.</p>
+            </div>
+            <a class="btn btn-primary" href="#visit">Plan your visit →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="offerings" id="offerings">
+      <div class="container offerings-grid">
+        <div class="offerings-copy">
+          <div class="eyebrow">Giving & Offerings</div>
+          <h2 class="section-title">Give with gratitude.</h2>
+          <p class="lead">For those who wish to support the ministry and life of CSI Shanthi Church, offerings can be sent using the church QR code below.</p>
+          <div class="offering-note">
+            <div class="offering-note-icon">✦</div>
+            <div>
+              <strong>Scan to send your offering</strong>
+              <p>Open your preferred payment app, scan the QR code and verify the recipient details shown in your app before completing the payment.</p>
+            </div>
+          </div>
+          <p class="offering-id"><span>Payment ID shown on the church QR:</span><br><strong>2035109440108665@cnrb</strong></p>
+        </div>
+        
+        <div class="offering-card premium-offering-card">
+          <div class="premium-offering-band"></div>
+
+          <div class="premium-offering-head">
+            <div class="premium-cross">✝</div>
+            <div>
+              <p class="premium-mini">Support the Ministry</p>
+              <h3>Offerings & Thanksgiving</h3>
+            </div>
+          </div>
+
+          <div class="premium-offering-body">
+            <div class="premium-qr-column">
+              <div class="premium-qr-shell">
+                <img src="assets/offerings-qr.png" alt="CSI Shanthi Church custom offerings QR code">
+              </div>
+              <p class="premium-scan-note">Scan with any UPI-enabled payment app</p>
+            </div>
+
+            <div class="premium-details-column">
+              <div class="premium-scripture">“Each one must give as he has decided in his heart.”<span>— 2 Corinthians 9:7</span></div>
+
+              <div class="premium-upi-box">
+                <small>UPI ID</small>
+                <strong>2035109440108665@cnrb</strong>
+              </div>
+
+              <ul class="premium-offering-points">
+                <li>Fast and simple digital offering</li>
+                <li>Custom static QR for the church website</li>
+                <li>Please verify recipient details before payment</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="premium-offering-foot">
+            <strong>Thank you for supporting CSI Shanthi Church.</strong>
+            <span>This QR remains valid as long as the church UPI ID stays active and unchanged.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="visit">
+      <div class="container visit-grid">
+        <div>
+          <div class="eyebrow">Plan a visit</div>
+          <h2 class="section-title">We would love to welcome you.</h2>
+          <p class="lead">CSI Shanthi Church is located in Wilson Garden, Bengaluru. Use the details below to plan your visit or contact the church office.</p>
+          <div class="contact-card">
+            <div class="contact-row"><small>Address</small><strong>#1, 12th Cross, Wilson Garden, Bengaluru – 560027</strong></div>
+            <div class="contact-row"><small>Presbyter-in-Charge</small><strong>Rev. Victor Prabhakar</strong></div>
+            <div class="contact-row"><small>Phone</small><strong><a href="tel:+919050583791">+91 90505 83791</a></strong></div>
+            <div class="contact-row"><small>Email</small><strong><a href="mailto:csishanthichurch1959@gmail.com">csishanthichurch1959@gmail.com</a></strong></div>
+            <div class="contact-row"><small>YouTube</small><strong><a href="https://www.youtube.com/@csishanthichurch586" target="_blank" rel="noopener">@csishanthichurch586</a></strong></div>
+          </div>
+        </div>
+        <div class="map-box">
+          <div class="map-overlay">
+            <strong>CSI Shanthi Church · Wilson Garden</strong>
+            <p style="margin:6px 0 16px;color:var(--muted)">Open directions in Google Maps.</p>
+            <a class="btn" style="background:var(--green);color:white" target="_blank" rel="noopener"
+              href="https://www.google.com/maps/search/?api=1&query=CSI+Shanthi+Church+12th+Cross+Wilson+Garden+Bengaluru+560027">Get directions →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand"><span class="brand-mark" style="background:#f1d79f;color:#18392c">✝</span><span>CSI Shanthi Church<small style="color:rgba(255,255,255,.52)">Wilson Garden · Bengaluru</small></span></div>
+          <p style="max-width:440px;margin-top:20px">A legacy of worship, fellowship and service — built across generations and entrusted to the generations to come.</p>
+        </div>
+        <div><h4>Explore</h4><p><a href="#about">About</a><br><a href="#services">Services</a><br><a href="#ministries">Ministries</a><br><a href="#history">Our Story</a><br><a href="#offerings">Offerings</a></p></div>
+        <div><h4>Connect</h4><p><a href="#visit">Plan a Visit</a><br><a href="https://www.youtube.com/@csishanthichurch586" target="_blank" rel="noopener">YouTube</a><br><a href="mailto:csishanthichurch1959@gmail.com">Email Church</a></p></div>
+      </div>
+      <div class="copyright">© <span id="year"></span> CSI Shanthi Church. Wilson Garden, Bengaluru.</div>
+    </div>
+  </footer>
+
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', ()=> navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const backToTop = document.getElementById('backToTop');
+    const toggleBackToTop = () => {
+      backToTop.classList.toggle('show', window.scrollY > 520);
+    };
+    window.addEventListener('scroll', toggleBackToTop, { passive: true });
+    toggleBackToTop();
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
