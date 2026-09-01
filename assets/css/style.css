@@ -747,124 +747,125 @@ footer h4{color:#f1d49d;letter-spacing:.03em}
 /* ===== end V8 luxury polish ===== */
 
 
-
-/* ===== V10 top navigation + subtle logo integration ===== */
-
-/* No oversized logo banner above the menu */
+/* ===== Header fix: top nav, subtle logo, cleaner hero ===== */
 .site-top,
 .site-top-centered{
   display:none!important;
 }
 
-/* Menu bar now starts at the top of every page */
 .site-header{
   position:sticky;
   top:0;
   z-index:100;
-  background:rgba(255,255,255,.94);
+  background:rgba(255,255,255,.95);
   backdrop-filter:blur(18px);
   border-bottom:1px solid rgba(23,58,44,.08);
-  box-shadow:0 8px 22px rgba(18,48,35,.035);
-}
-nav{
-  min-height:66px;
+  box-shadow:0 6px 18px rgba(18,48,35,.035);
 }
 
-/* Keep the church emblem subtle in the navbar */
+nav{
+  height:64px;
+  min-height:64px;
+}
+
 .nav-logo-clean{
   width:42px;
   height:42px;
-  border-radius:13px;
-  background:rgba(255,255,255,.92);
-  border:1px solid rgba(23,58,44,.08);
-  box-shadow:0 6px 16px rgba(23,58,44,.06);
+  border-radius:12px;
   overflow:hidden;
+  background:#fff;
+  border:1px solid rgba(23,58,44,.08);
+  box-shadow:0 6px 14px rgba(23,58,44,.06);
+  flex:0 0 auto;
 }
+
 .nav-logo-clean img{
   width:42px;
   height:42px;
   object-fit:cover;
+  display:block;
 }
 
-/* Hero watermark uses the church logo in a restrained way */
 .hero-home{
   position:relative;
   overflow:hidden;
 }
+
 .hero-home::before{
   content:"";
   position:absolute;
-  right:5%;
-  top:10%;
-  width:min(34vw,420px);
+  right:4%;
+  top:8%;
+  width:min(31vw,390px);
   aspect-ratio:1;
   background:url('../images/church-logo-custom.png') center/contain no-repeat;
-  opacity:.075;
-  filter:grayscale(.12);
+  opacity:.065;
   pointer-events:none;
   z-index:1;
 }
+
 .hero-home .page-hero-content{
   position:relative;
   z-index:2;
 }
 
-/* New homepage title hierarchy */
 .hero-home .page-hero-content h1{
+  max-width:920px;
   margin-top:12px;
-  max-width:900px;
 }
+
 .hero-church-name{
   display:inline-block;
   font-size:.78em;
-  color:#ffffff;
+  color:#fff;
   letter-spacing:-.02em;
 }
+
 .hero-tagline{
   display:inline-block;
   margin-top:10px;
-  font-size:.56em;
-  line-height:1.12;
+  font-size:.55em;
+  line-height:1.15;
   font-weight:500;
-  letter-spacing:-.02em;
+  letter-spacing:-.015em;
 }
 
-/* Keep all other page heroes clean */
-.page-hero:not(.hero-home)::before{
-  content:none!important;
-}
-
-/* Mobile declutter */
 @media(max-width:650px){
   nav{
+    height:58px;
     min-height:58px;
   }
-  .nav-logo-clean{
-    width:36px;
-    height:36px;
-    border-radius:11px;
-  }
+
+  .nav-logo-clean,
   .nav-logo-clean img{
     width:36px;
     height:36px;
   }
-  .hero-home::before{
-    right:-8%;
-    top:12%;
-    width:62vw;
-    opacity:.055;
+
+  .nav-links{
+    top:58px;
+    left:10px;
+    right:10px;
+    padding:10px;
+    gap:2px;
   }
+
+  .hero-home::before{
+    right:-10%;
+    top:12%;
+    width:64vw;
+    opacity:.045;
+  }
+
   .hero-church-name{
     font-size:.68em;
   }
+
   .hero-tagline{
     margin-top:8px;
-    font-size:.48em;
+    font-size:.49em;
     line-height:1.18;
   }
-  .page-hero h1{
-    line-height:1.02;
-  }
 }
+/* ===== end header fix ===== */
 
-/* ===== end V10 refinement ===== */
